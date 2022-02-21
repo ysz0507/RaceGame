@@ -13,12 +13,12 @@ class Rennspiel():
         TwoDmode = 2
         ThreeDmode = 3
 
-    def __init__(self, dimension, fullscreen):
+    def __init__(self, dimension, fullscreen, mapName):
         self.dimension = dimension
         self.rennzeit = time.time()
         laenge = 100
 
-        self.renderer = Renderer(int(1920 * 0.7), int(1080 * 0.7), laenge, dimension, fullscreen)
+        self.renderer = Renderer(laenge, dimension, fullscreen, mapName)
 
         self.car = Auto(self.renderer.SCREEN_WIDTH / 2, self.renderer.SCREEN_HEIGHT / 2, laenge)
 
@@ -53,7 +53,7 @@ class Rennspiel():
     def reset(self):
         with open("sources2D/maps/spawns.json", "r") as file:
             data = json.load(file).get(self.renderer.MAP)
-        print(data)
+
         self.car.geschwindigkeit = data.get("geschwindigkeit")
         self.orientierung = data.get("orientierung")
         self.car.richtung = data.get("richtung")
@@ -99,7 +99,7 @@ class Rennspiel():
             
         if keys[pygame.K_SPACE]:
             self.reset()
-        if keys[pygame.K_e]:
+        if keys[pygame.K_ESCAPE]:
             return False
         if keys[pygame.K_p]:
             self.setSpawnPoint()
@@ -127,7 +127,8 @@ class Rennspiel():
         self.renderer.quit()
 
 if __name__ == '__main__':
-    spiel = Rennspiel(Rennspiel.Dimension.TwoDmode, False)
-    #spiel = Rennspiel(Rennspiel.Dimension.ThreeDmode, False)
-    
+    pygame.init()
+    spiel = Rennspiel(Rennspiel.Dimension.TwoDmode, True, "Strand")
+    #spiel = Rennspiel(Rennspiel.Dimension.ThreeDmode, False, "Strand")
     spiel.mainLoop()
+    pygame.quit()

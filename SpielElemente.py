@@ -88,23 +88,29 @@ class Auto():
 
 
 class Renderer():
-    def __init__(self, width, height, autoLaenge, dimension, fullscreen):
-        pygame.init()
+    def __init__(self, autoLaenge, dimension, fullscreen, mapName):
+        
         self.GRID = False
         self.dimension = dimension
 
-        self.SCREEN_WIDTH = width
-        self.SCREEN_HEIGHT = height
-        if fullscreen and dimension == 2:
-            self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT), pygame.FULLSCREEN)
+        if fullscreen and dimension.value == 2:
+            self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         else:
-            self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
+            self.screen = pygame.display.set_mode((int(1920 * 0.7), int(1080 * 0.7)))
+    
+        infoObject = pygame.display.Info()
+        self.SCREEN_WIDTH = infoObject.current_w
+        self.SCREEN_HEIGHT = infoObject.current_h
+
+        
+
 
         # Hier Map waehlen:
-        self.MAP = "sachsenring"
+        #self.MAP = "sachsenring"
 
         # Nur 2D:
         #self.MAP = "sachsenring_v2"
+        self.MAP = mapName
 
         if dimension.value == 2:
             self.clock = pygame.time.Clock()
@@ -195,7 +201,7 @@ class Renderer():
 
         dx = int(self.auto_mask_corner[0]) - self.map.get_rect().x
         dy = int(self.auto_mask_corner[1]) - self.map.get_rect().y
-
+        
         if self.collision_mask.overlap(self.auto_mask, (dx, dy)):
             return True
         else:
@@ -237,7 +243,6 @@ class Renderer():
 
 
     def quit(self):
-        pygame.quit()
         if self.dimension.value == 3:
             self.scene.quit()
 

@@ -2,14 +2,22 @@
 
 Dieses kleine Spiel ist noch nicht fertig!
 
-Zur Auswahl zwischen 2D und 3D kann man innerhalb der Main.py die Zeilen 130 bzw. 131 kommentieren.
+Geplant ist eine Erweiterung auf 3D. Im Moment ist dies aber nur begrenzt möglich. Zum Ausprobieren kann man jedoch die entsprechenden Zeilen in der Datei Startbildschirm Zeile 91 Kommentieren.
 
-Zur Auswahl der Maps kann man in der Datei SpielElemente.py in der Klasse Renderer die entsprechenden Zeilen kommentieren.
 
 # Steuerung
 
-E für Exit
+Esc für Exit
 
 P für Spawnpoint
 
+SPACE für Reset
+
 Arrows für die Stuerung des Wagens
+
+Bei 3D außerdem WASD, um mit der Kamera zu erkunden.
+
+
+# Hinweise zum Ausführen
+
+Das Programm läuft bei mir mit pygame 2.0.1 und Python 3.8.6
