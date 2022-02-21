@@ -121,7 +121,7 @@ class Rennspiel():
                     spielt = False
             spielt = self.movement()
             
-            self.renderer.log("FPS: " + str(1.0 / (time.time() - start_time)))
+            #self.renderer.log("FPS: " + str(1.0 / (time.time() - start_time)))
             self.renderer.refresh(self.kamera, self.car.blickrichtung, self.car.vorn, self.car.hinten)
             start_time = time.time()
         self.renderer.quit()

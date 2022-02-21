@@ -100,9 +100,11 @@ class Renderer():
         else:
             self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
 
-
+        # Hier Map waehlen:
         self.MAP = "sachsenring"
-        #self.MAP = "viereck"
+
+        # Nur 2D:
+        #self.MAP = "sachsenring_v2"
 
         if dimension.value == 2:
             self.clock = pygame.time.Clock()
