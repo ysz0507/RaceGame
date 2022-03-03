@@ -1,8 +1,5 @@
 import json
-from locale import currency
 import os
-from select import select
-from xml.dom import INVALID_MODIFICATION_ERR
 import pygame
 
 from Rennspiel import Rennspiel 
