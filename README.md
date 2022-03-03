@@ -1,5 +1,4 @@
 # RaceGame
-
 Dieses kleine Spiel ist noch nicht fertig!
 
 Geplant ist eine Erweiterung auf 3D. Im Moment ist dies aber nur begrenzt möglich. Zum Ausprobieren kann man jedoch die entsprechenden Zeilen in der Datei Startbildschirm Zeile 91 Kommentieren.
@@ -7,17 +6,25 @@ Geplant ist eine Erweiterung auf 3D. Im Moment ist dies aber nur begrenzt mögli
 
 # Steuerung
 
-Esc für Exit
-
-P für Spawnpoint
-
-SPACE für Reset
-
-Arrows für die Stuerung des Wagens
-
-Bei 3D außerdem WASD, um mit der Kamera zu erkunden.
-
-
-# Hinweise zum Ausführen
-
-Das Programm läuft bei mir mit pygame 2.0.1 und Python 3.8.6
+<table>
+    <tr>
+        <td>ESC</td>
+        <td>Exit the game</td>
+    </tr>
+    <tr>
+        <td>P</td>
+        <td>Set spawnpoint</td>
+    </tr>
+    <tr>
+        <td>SPACE</td>
+        <td>Reset Car</td>
+    </tr>
+    <tr>
+        <td>Arrows</td>
+        <td>Steering of the car</td>
+    </tr>
+    <tr>
+        <td>WASD</td>
+        <td>Steering of the camera (only in 3D mode)</td>
+    </tr>
+</table>
